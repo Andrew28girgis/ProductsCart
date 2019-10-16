@@ -1,0 +1,29 @@
+<div class="container">
+    <h1>Shopping Cart Items</h1>
+    <ng-container *ngIf="cart$ | async as cart ">
+        You Have {{cart.getTotalCount}} items in Your Cart
+
+<table class="table mt-4">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let prodID of cart.productids">
+            <td>{{cart.items[prodID].product.title}}</td>
+            <td>{{cart.items[prodID].quantity}}</td>
+            <td>{{cart.items[prodID].product.price}}</td>
+        </tr>
+        <tr>
+            <td scope="row"></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+    </ng-container>
+</div>

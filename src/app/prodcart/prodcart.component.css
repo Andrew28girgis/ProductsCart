@@ -1,0 +1,12 @@
+.card-img-top
+{
+    height: 250px;
+}
+.sticky-top
+{
+    top: 70px;
+}
+.card-footer
+{
+    padding: 0;
+}

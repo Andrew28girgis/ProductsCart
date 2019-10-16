@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 col-sm-6">
+            <div class="sticky-top">
+                <a routerLink="/" [class.active]="!category" class="list-group-item list-group-item-action mb-2 ">All
+                    Category</a>
+
+                <div *ngFor="let catg of categories$ | async" class="list-group">
+                    <a routerLink="/" [queryParams]="{ category : catg.name }" [class.active]="category === catg.name"
+                        class="list-group-item list-group-item-action mb-2 ">{{catg.name}}</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="row">
+
+                <ng-container *ngFor="let p of filterdProducts">
+                    <div class="col-lg-4 col-md-6 col-sm-12 col-11  mb-3">
+                        <app-prodcart [product]="p"  [shoppingCart]="cart" ></app-prodcart>
+                    </div>
+                </ng-container>
+
+            </div>
+
+        </div>
+    </div>
+</div>
